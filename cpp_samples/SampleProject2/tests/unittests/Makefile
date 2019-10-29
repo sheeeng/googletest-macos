@@ -1,16 +1,14 @@
-# Root directory of google test framework
-CELLAR_DIR=/usr/local/Cellar
-GTEST_DIR=${CELLAR_DIR}/gtest
-GMOCK_DIR=${CELLAR_DIR}/gmock
+GTEST_DIR = ${HOME}/Downloads/googletest-release-1.10.0/googletest
+GMOCK_DIR = ${HOME}/Downloads/googletest-release-1.10.0/googlemock
 
-CPPFLAGS = -I../../src -I${CELLAR_DIR} -I$(GTEST_DIR) -I$(GMOCK_DIR)
+CPPFLAGS = -I../../src -I$(GTEST_DIR) -I$(GMOCK_DIR)
 
-# Flags passed to the C++ compiler.
-# https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
-CXXFLAGS = -g -std=c++17
+# # Flags passed to the C++ compiler.
+# # https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
+# CXXFLAGS = -g -std=c++17
 
 # LIBS = -lpthread -lgtest $(GTEST_DIR)/libgtest.a $(BUILD_DIR)/libcomponents.a
-LIBS = -lpthread $(GTEST_DIR)/libgtest.a  $(BUILD_DIR)/libcomponents.a
+LIBS = -lpthread ../libgtest.a  $(BUILD_DIR)/libcomponents.a
 
 TESTS = $(BUILD_DIR)/test_component1
 

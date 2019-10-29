@@ -2,15 +2,16 @@ export BUILD_DIR = $(shell "pwd")/build
 
 # Flags passed to the C++ compiler.
 # https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
-export CXXFLAGS = -g -pthread --coverage
+# export CXXFLAGS = -g -pthread --coverage
+export CXXFLAGS = -g -Wall -Wextra -Werror -std=c++17
 # export CXXFLAGS = -g -pthread --coverage -std=c++11 -Wc++11-extensions -Werror -ferror-limit=4
 
 # Flags passed to the linker.
 # https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
 export LDFLAGS = -pthread --coverage
 
-export CC = g++
-export LD = g++
+export CC = clang++
+export LD = clang++
 export AR = ar
 
 .PHONY: all
